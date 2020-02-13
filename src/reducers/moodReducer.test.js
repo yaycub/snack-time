@@ -11,7 +11,7 @@ describe('Mood Reducer', () => {
     const action = drinkCoffee();
     const state = { coffees: 0 };
 
-    const newState = reducer(state, action);
+    const newState = reducer(state, action.name);
 
     expect(newState).toEqual({ coffees: 1 });
   });
@@ -20,7 +20,7 @@ describe('Mood Reducer', () => {
     const action = eatSnack();
     const state = { snacks: 0 };
 
-    const newState = reducer(state, action);
+    const newState = reducer(state, action.name);
 
     expect(newState).toEqual({ snacks: 1 });
   });
@@ -29,7 +29,7 @@ describe('Mood Reducer', () => {
     const action = takeNap();
     const state = { naps: 0 };
     
-    const newState = reducer(state, action);
+    const newState = reducer(state, action.name);
 
     expect(newState).toEqual({ naps: 1 });
   });
@@ -38,7 +38,7 @@ describe('Mood Reducer', () => {
     const action = toStudy();
     const state = { studies: 0 };
 
-    const newState = reducer(state, action);
+    const newState = reducer(state, action.name);
 
     expect(newState).toEqual({ studies: 1 });
   });
