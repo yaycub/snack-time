@@ -1,20 +1,8 @@
-import { 
-  drinkCoffee, 
-  eatSnack, 
-  takeNap, 
-  toStudy 
-} from '../actions/moodActions';
 import React, { useReducer } from 'react';
 import Controls from '../components/controls/Controls';
 import Face from '../components/face/Face';
 import reducer from '../reducers/moodReducer';
-
-const actions = [
-  drinkCoffee(),
-  eatSnack(),
-  takeNap(),
-  toStudy()
-];
+import { getActions } from '../selectors/actionSelector';
 
 export const isTired = state => state.coffees < 1 && state.naps < 1;
 export const isHyper = state => state.coffees > 3;
@@ -39,6 +27,7 @@ export const Moods = () => {
     naps: 0,
     studies: 0
   });
+  const controlActions = getActions(state);
 
   const handleSelection = name => {
     dispatch(name);
@@ -46,10 +35,7 @@ export const Moods = () => {
 
   
   const face = getFace(state);
-  const controlActions = actions.map(action => ({
-    ...action,
-    count: state[action.stateName]
-  }));
+  
 
   return (
     <>
