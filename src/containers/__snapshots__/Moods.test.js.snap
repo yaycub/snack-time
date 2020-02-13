@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Moods container matches a snapshot 1`] = `
+exports[`Moods Component should render Moods 1`] = `
 <Fragment>
   <Controls
     actions={
