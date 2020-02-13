@@ -1,12 +1,18 @@
+import { 
+  drinkCoffee, 
+  eatSnack, 
+  takeNap, 
+  toStudy 
+} from '../actions/moodActions';
 import React, { Component } from 'react';
 import Controls from '../components/controls/Controls';
 import Face from '../components/face/Face';
 
 const actions = [
-  { name: 'DRINK_COFFEE', text: 'Drink Coffee', stateName: 'coffees' },
-  { name: 'EAT_SNACK', text: 'Snack', stateName: 'snacks' },
-  { name: 'TAKE_NAP', text: 'Nap', stateName: 'naps' },
-  { name: 'STUDY', text: 'Study', stateName: 'studies' },
+  drinkCoffee(),
+  eatSnack(),
+  takeNap(),
+  toStudy()
 ];
 
 export const isTired = state => state.coffees < 1 && state.naps < 1;
